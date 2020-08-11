@@ -22,6 +22,9 @@ const db = "mongodb://localhost:27017/eventsdb"
   if(!req.headers.authorization){
     return res.status(401).send('Unauthorized request');
   }
+  
+  //decode
+
   let token = req.headers.authorization.split(' ')[1]
   if(token === 'null'){
     return res.status(401).send('Unauthorized request');
